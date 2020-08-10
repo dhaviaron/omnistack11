@@ -1,45 +1,12 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import logoImg from '../../assets/logo.svg'
+
 import "./styles.css";
 
-export default function Register() {
-  return (
-    <div className="register-container">
-      <div className="content">
-        <section>
-         <img src={logoImg} alt="Be The Hero" />
-          <h1>Cadastro</h1>
-          <p>
-            Faça seu cadastro, entre na plataforma e ajude pessoas a encontrar
-            os casos da sua ONG
-          </p>
+import api from "../../services/api";
 
-          <Link to="/" className="back-link">
-            <FiArrowLeft size={16} color="#e02041" />
-            Não tenho cadastro
-          </Link>
-        </section>
-        <form>
-          <input placeholder="Nome da Ong" />
-          <input type="email" placeholder="E-Mail" />
-          <input placeholder="Whatsapp" />
-
-          <div className="input-group">
-            <input placeholder="Cidade" />
-            <input placeholder="UF" style={{ width:80}} />
-          </div>
-          <button className="button" type="submit">Cadastrar</button>
-        </form>
-      </div> 
-    </div>
-  )   
-}
-
-//import api from "../../services/api";
-
-/*import logoImg from "../../assets/logo.svg";
+import logoImg from "../../assets/logo.svg";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -73,7 +40,22 @@ export default function Register() {
     }
   }
 
-  
+  return (
+    <div className="register-container">
+      <div className="content">
+        <section>
+          <img src={logoImg} alt="Be The Hero" />
+          <h1>Cadastro</h1>
+          <p>
+            Faça seu cadastro, entre na plataforma e ajude pessoas a encontrar
+            os casos da sua ONG
+          </p>
+
+          <Link to="/" className="back-link">
+            <FiArrowLeft size={16} color="#e02041" />
+            Não tenho cadastro
+          </Link>
+        </section>
 
         <form onSubmit={handleRegister}>
           <input
@@ -113,4 +95,4 @@ export default function Register() {
       </div>
     </div>
   );
-}*/
+}
